@@ -1,0 +1,662 @@
+CPU BURST :begining of that process execution(movement of starting the process) 
+REDI QUEUE : ready to execute
+
+Algoritms:
+========
+PREMETIVE :  process can be stopped when any interepted is occur
+NON PREMETIVE :process cannot  be stopped when any interepted is occur
+           >>First come first serve(ffs)
+
+gantt chat:it tells the time.it tells finish or starting time.
+
+Analyzing the FCFS:
+Merits: 
+    >>>Better for long processs
+    >>>Simple method
+Demreits:
+    >> if it is a small processs in second it waits until 1st one is completed.
+
+Shortest job next (or)Shortest job first:
+>>>non-premetive
+>>>best for short procesess 
+
+#rhel:
+fn+alt+f2
+ctrl+alt(for cursor)
+
+commands:
+=========
+pwd
+ls
+ls -l :to know it is a file or directory
+group and root is a same name-size in bytes-
+clear (or) ctrl+l
+to create file : touch <filename>
+  >>>it creates an empty file
+ls -l (or) ll<file name> that file properties it executes.
+
+cat >file2 : to give contect also
+to see--> cat file2
+to add information to exiting files --> cat>>file2
+rm file1 (it will delte file)
+rm file2
+rm -f file2(to do delete file without ask anything)
+cp file1 file4(to copy file from 1 to 2)
+diff file1 file2
+
+mv file3 /file3(move and rename)
+
+mkdir king(to crreate directory)
+rm -rf files(to delete all at ones)
+rm -rf * (rf -recent file)
+su(to go to user environment)
+cd-(change directory)
+cd ..(to go back)
+cd tab(to go)
+cd/(to go front )
+ls -R (dirname)/
+bc(basic calculator)
+gnome-calculator
+ctrl+c for breaking
+hostnamectl(details for hostname)
+hostname <name>(it is temporary)
+ls -r name(remove directory)
+r-remove recursively
+f-forcefully
+rm -rf name/
+ls -ld filename
+ls -l
+cat /etc/passwd(to know user is created or not)
+useradd veeru(to crearting user)
+>>>passwd veeru
+>>>
+chmod - it is used to provide permissions.
+esc: q!(to quit).
+chown ownername filename(to chanage the owner)
+groupadd filename (new group)
+chgrp to change group name
+
+
+vi[ to create data file]
+chmod - for giving permissions
+
+r=4
+w=2
+x=1
+rw=6
+rwx=7
+chmod 777 <filename>
+ls-l
+ls-ld <filename>
+
+getfacl  <filename>(we can get file command (access control)
+
+
+
+
+
+
+
+
+
+FILE PERMISSIONS:
+read
+write 
+execute
+these are called cell scripting.
+
+USER/OWNER: who created the file / directory
+GROUP: couple of user is their
+OTHERS:except user and group members.8
+
+
+algoriths:
+fcfs-(Fido)
+sjf(shortest job first)-(shortest job next(SFJ)
+rr-round robin(it is for time sharing systems)(quantum).
+>>>for every process it given a chance
+priority scheduling: the process will be given by some priority.
+>>>run the process with highest priority.
+>>>if two or more having same priority,use FFS.
+if you have same priority of two or more numvers apply rr and ffs on that.
+>>>priority -FCFS
+>>>priority-RR.
+
+every algorithm maintains only one queue.
+only one redicue.|^
+===========================================================================================================
+multilevel queue algo:
+>>>from here multiple redicues is their
+
+ex:user redicue,kernal redicue etc
+every redicue can go for multiple algoritms.
+kernal process execute kernal system call.
+batch is also called kernal process.
+foreground process will have highest process.it executes user only.
+
+interactive editing proceses(medial process)
+iterative process(user process)
+
+one any process is go to any redicue it doesnt go to another redicue..bcz it is allocated.
+>>>foreground processes can be given 80% of cpu time for RR scheduling among its processes.
+>>>the background queue can be given 20% of cpu .
+
+if process wants highter redicue use multilevel feedback algo.
+
+======================================
+PROCESS ---->
+>login(parent class)--->GUI/CLI -->shell(child process)--->execute some other process(another chid process)
+
+THREADS: part of the process.
+WEB BROWSER: process
+
+
+os--->process--->thread
+all thredas mapped to one kernal.
+1 thread can access the kernal at a time.
+
+process( 2 processors) -resource (resource will be released when process is done) 
+dead lock : no process are able to finish bcz the resorces busy with another process.
+*mutual exclusion: 
+*hold and wait:
+*no preemption : process not close , not break when resource is not available.
+*circular wait : 
+process sometimes can works on multiple resouces.
+resources sometimes can works on multiple process.
+
+Ostrich algorithm: if dead lock happens it reboots the system.
+if cmp is continously reboots if effects hdd.
+methods for handling deadlock:
+======================
+*deadlock detection:
+
+*deadlock recovery
+*deadlock avoidance
+>>>how resources are to be requested.
+**bankers algorithm: for mutiple instances of a resource type . it is also called safety algorithm.
+>>>it is a powerfull algorithm
+>>>available: available resources of each type.
+>>>maximum: defines demand of that process.
+>>>allocation:how many resources already allocated or  need resources for the process
+>>>need: remaing resources need of each proceess(max - allocation)
+**resourse allocation : for single instances of a resource type
+Resourse allocation graph algo:
+>>>
+
+*deadlock prevention
+
+
+safe state: if system doesnt have any cycle  deadlock .
+unsafe state : may be dead lock occurs (changes occur state).
+
+
+USER MANAGEMENT:
+===============
+administrative user
+root
+normal user
+
+head /etc/passwd
+head -n1 /etc/passwd
+more /etc/passwd 
+less /etc/passwd(use enter)
+  root              x                
+username : masked pssd : uid : gid : nic name(cananical name) : home dir : shell
+useradd u-9999 g-
+useradd filename
+username -c manager name
+useradd -d/mnt/charan charan
+for shell: useradd -s /bin/sh name
+>>>tail -n1 /etc/passwd
+tail -n1 /etc/passwd
+>>> cat /etc/passwd
+>>>
+
+
+
+ACL : access control list
+default permissions for file : rw : r : r - 644
+
+defaulit permissions for directory : rwx : rx : rx  - 755
+umask - for default permissions(666 - default permissions of that file)
+syntax #666-622
+hostnamectl -- to know about your os
+to know system command - ifconfig
+ip a
+upg :  user primary group is created when group is assigned with readwrite.
+when ever u create user it create a group ..that is called upg
+
+cat  /etc/passwd - users present(to see)
+useradd username
+passwd username
+
+for only one person:
+>>>setfacl -m u:username :r
+to quit : - :q!
+to add group : groupadd groupname
+mask - maximum permission
+setfacl -m g(groups): groupname :rwx filename
+getfacl filename
+
+[root@localhost mnt]# setfacl -m g:aditya:rw thub
+[root@localhost mnt]# getfacl aditya
+getfacl: aditya: No such file or directory
+[root@localhost mnt]# getfacl thub
+
+root@localhost mnt]# gpasswd -M airtel,jio,bsnl aditya
+gpasswd: user 'bsnl' does not exist
+[root@localhost mnt]# gpasswd -M airtel,idea,jio aditya
+[root@localhost mnt]# cat /etc/group
+[root@localhost mnt]# getfacl redhat
+# file: redhat
+# owner: root
+# group: root
+user::rw-
+group::r--
+other::r--
+
+[root@localhost mnt]# setfacl -m g:aditya:rw redhat
+[root@localhost mnt]# getfacl redhat
+# file: redhat
+# owner: root
+# group: root
+user::rw-
+group::r--
+group:aditya:rw-
+mask::rw-
+other::r--
+
+[root@localhost mnt]# 
+
+cat /etc/passwd
+cat /etc/group (to see groups and members)
+
+groupname sai
+bash: groupname: command not found...
+[root@localhost mnt]# groupadd sai
+[root@localhost mnt]# useradd samsung
+[root@localhost mnt]# useradd apple
+[root@localhost mnt]# useradd vivo
+[root@localhost mnt]# cat /etc/passwd
+[root@localhost mnt]# gpasswd -M samsung,apple,vivo sai
+[root@localhost mnt]# cat /etc/group
+apple:x:1012:
+vivo:x:1013:
+[root@localhost mnt]# touch laptop
+[root@localhost mnt]# cat>laptop
+[root@localhost mnt]# setfacl -m g:sai:rwx laptop
+[root@localhost mnt]# getfacl laptop
+# file: laptop
+# owner: root
+# group: root
+user::rw-
+group::r--
+group:sai:rwx
+mask::rwx
+other::r--
+
+[root@localhost mnt]# 
+
+
+
+Networking :
+make the systems connect and communicate with each other.
+sharing and accessing the resources
+resouce is any kind of information it might be a data , or audio ,video files etc.
+the person who is sharing the information is server
+who are accessing data they are clients.
+topology : 2 types
+1) pysical topology 
+2)logicaltopology
+the system how they are connected is called pysical topology
+how these systems connected each other with logical is called logical tapology
+work group and client server logical topologies
+bus,star etc ..physical topologies
+work group : work together as a group
+client server model : it has a centralized resource, 
+they are 2 types of addresses :
+physical address --->by the manufacturer
+mac address(unique entiti) -> media access control also known as pysical address no two mac address are same.
+logical address(dynamically change) : ip address  we can change ip adress any times.
+
+ip addesses are 2 types:
+---------------------------
+public ips and privite ips 
+public : anyone can access
+private - only authorized persons can access.
+versions of ip  versions:
+ipv4 - 32 bit (it have limited ip addresses)
+ipv6 - 128 bit address (unlimited ip address)
+ipv4 : 192.168.10.1 - total 4 octates(contains 8 bit(either 0 or 1) information)
+           11100111.10010100.0111101.11110000(ip address in binary)
+least significant bit 
+000000000 :powers of 2
+(0*2^7)+(0*2^6)+(0*2^5)+(0*2^4)+(0*2^3)+(0*2^2)+(0*2^1)+(0*2^0) = 0
+most signifiacnt bit :
+(1*2^7)+(1*2^6)+(1*2^5)+(1*2^4)+(1*2^3)+(1*2^2)+(1*2^1)+(1*2^0) = 128+64+32+16+8+4+2+1=255
+classification of ipv4 :
+ip address starts with 0 is invalid.
+Class A: least value : 0-0000000 =0
+              highest value : 0 - 1111111 =127(universal loop back)
+   0 to 127
+Class B: least value :10-000000=128
+              highest value : 10 - 1111111 = 255-64 = 191
+    128 to 191
+Class C: least value : 110-00000 =192
+              highest value : 110 - 11111= 255-32 = 223
+    192 to 223
+Class D:least value : 1110-0000 =128+64+32=224
+              highest value : 1110 - 1111 = 239
+      224 to 239
+Class E: least value : 1111-0000 =128+64+32+16 =240
+              highest value : 1111 - 1111 = 255
+     240 to 255
+0.0.0.0 unicast uddress.(one to one)
+255.255.255.255 - broad cast address.(one to all)
+multicasting (one to some people or one to some group oof people)
+
+
+class - A : 0-127
+class - B : 128 - 191
+class -C : 192 - 223
+class - D : 224 - 239
+class - E : 240 - 255
+to tell the class see only first octate.
+
+
+subnet class:
+===========
+9 . 99 . 69 . 39
+N . H . H . H
+N-network part 
+H - host ID /host part
+in subnet mask u write n is 255 and h is 0
+255.0.0.0 for class A
+
+Claas B:
+182.136.126.121
+ N  .  N  . H  . H
+255.255.0.0
+
+class c:
+193.123.122.187
+N  .   N  . N  . H
+255.255.255.0
+
+
+class D:
+224.123.134.145
+N    . N .   N . H
+it is used for multicasting.
+
+
+Class E : 
+N.N.N.H (research and development)
+
+real utiilization of ip address - A,B,C
+in c class less no.of ip address.
+1st:
+===
+see how many no.of systems in that.so use that class in that.
+Class A : 1.0.0.0 (in ip adress we find last octate is "0" it is network address)
+1.0.0.1 (beginning ip address)
+.
+.
+.
+1.0.0.255
+
+next :
+====
+1.0.1.1
+1.0.255.255
+
+1.1.0.1
+1.255.255.255 - total host address - 255*255*255
+
+2.0.0.1 
+255.255.255.255
+
+class B:
+checks networks id: if td is change ..communication is not possible.
+128.0.0.1
+128.0.0.255
+
+128.0.1.1
+128.0.255.255
+
+128.1.0.1(here network changes)(total host address 255*255)
+128.255.255.255
+
+class c:
+192.0.0.1
+192.0.0.255
+192.0.1.1(here network changes )(here max 255 ip address are there)
+192.0.255.255
+
+
+networking is doesnt depending os .  for everey os it is same.
+default gateway :
+============
+router interface which we cross whe we are entering others network
+
+
+
+
+
+
+
+
+password breaking:
+* restart button abd esc
+*press  in e2 edit press e(edit)
+go to linux line with cuscor -- go to end 
+*write rd.break (interupting before kernel will be loaded)
+*press ctrl -x to start
+in emergency mode type "mount -o remount ,rw /sysroot"(mounting / sisroot)
+chroot /sysroot(to go to main (system)root)
+in sh : type "passwd root- enter
+giving password
+##cd /
+ls 
+ls -a
+touch /.autorelabel
+exit 
+exit
+exit / reboot
+
+press e
+=================
+mount I grep /sysroot : used to see the access of that file.
+cat .aurorelabel : to see the content on that
+
+link is also called access layer.-> data link + physical
+public ip : everyone can access it.
+private ip: authorized ones can access it. 
+
+2pow h -2 (real no of hosts)
+subnetting : merge some bits to that 
+
+for ipv6 - it is hexate
+for ipv4- it is octate
+
+
+degree of multiprogramming : 
+to increse of degree of multiprogramming we use more ram.
+
+memory management : 2 types
+1)continueous
+2)non - continuoes
+
+os load in first block of ram
+1)continues : secondary memory ------> ram ------>cpu
+spamming or breaking is not possible in continuoes memory from one block to another block.
+*fixed partitioning : the ram will partitioned in pre defined .
+the partition is predefined before it will comung to the ram
+
+wastage of that block is called internal fragmentation.
+
+variable partioning /dynamic partitioning : there is no fixed or predefined partitioning 
+it depends on demand
+
+external fragmentation: continuuoes is major pblm in this
+but it is possible because of compaction.
+>stop the all programmes
+>analyze the ram
+>analauze all the blocks
+>deallocate and alloacete is happens so it takes much time.
+>it will take more time
+
+these are the algorithms for internal and externnal fragmentation:
+=============================================
+first fit : it search from starts 
+next fit : search from filled nxt block .  it searches from pointer.
+best fit : it checks which one is best for that cmg processing . it is slow process bcz it analyse all the ram.
+worst fit : reverse to the best fit.but sometimes it helps.
+
+
+NON - CONTINGUOES MEMORY : 
+
+paging : one process can split into pages(partitions) it happens only in secondary memory. after that pages comes into ram.
+ram - the alloacation is in the form of frames(the pages).
+page size = frame size
+the cpu asking address that not absolute.
+cpu asks only that byte.  for his purpose the mapping(MMU - memory management unit) is used.
+
+mapping will convert the logical address asked by the cpu, it will convert the logical address to the physical address of the byte.
+mapping created one page table .
+
+frame - ram
+pages - process
+
+Virtual Memory(buffer memory):
+======================
+process - 10 pages - ram(10 frames)
+2 pages - sec - virtual
+
+virtual memory - double to physical memory.
+page replacement :
+=============
+tme moving process from main to virtual memory is called swap out.
+virtual to main is swap in.
+
+page hit - page available in main memory - it takes nano seconds only.
+page fault - page avalable in virtual memory - os comes - swap in occurs.
+virtual - main memory - cpu(milli seconds - l milli sec = 10 lakh nano seconds)
+page replacement uses swap in and swap out.
+three algorithms for page replacement :
+1)fifo - first in first out.
+2)lru - least recently used. - 
+3)optimal used - future
+
+more page fault occurs : os is busy in page faults. if os is busy cpu doesnt do anything. bcz cpu doesnt getting any process.
+ cpu utilization reduced. performance is reduced. because incrase the degree of multi programming.
+
+thrashing : the sudden decrease of cpu utilization . trashing occurs bcz of page fault .
+to avoid trashing we increase the main memory. and 
+long term scheduler : 
+f
+demand paging:
+===========
+where u can replace the page is called demand paging.
+
+secondary memory:
+
+hdd - it used magnetic conductor.
+sdd - it used semi conductor ,ssd will save. it is expensive bcz of 
+ssd is very fast , size is less that is the disadvantage here.
+flash
+we use dram in main memory
+sram we are used in ssd and cache,registers.
+processor is also a semi conductor.
+the first semi conductor manufactured unit  is in taiwan
+manufacturing unit oof semi conductor in india (2nd one)
+hybrid storage : some storage in ssd and some in hdd.
+
+
+hdd- plater, header and steppor motor is the main parts of hdd.
+plotter - combiination of steel and alluminium
+header - read and write the data here , there is a small sensor . header doesnt touch the plotter. sensore only read and write the data.
+steppor motor  - it gives power and then the disk is rotate.
+hdd rpm in laptop: 5400 rpm
+hdd rpm in desktop: 7200 rpm
+rpm == good performance (read and write)
+iops : input output operations per sec. the iops u have , good performance will get from hdd / sdd.
+
+plotter : tracks(round shape) and sectors(small block)  the blocks will formed where  tracks and sectors formed in plotters.
+format(deleting)- concept of format is creating the file system on pen drive and delete in pc.
+data is saved in tracks.
+
+File System:
+=========
+read and write header is move front and back only.
+after shutdown the computer the present area of header is called parking point.(start of sector)
+msdos - fat16
+windoes 10,11 - new technology file system(ntfs)
+linux file system - zfs(high capacity data)
+facebook takes space in harddisk per day(zeta bytes of data)
+os is automatically creates file system.
+installing - the files that we require files from package to os.
+in installation package we acquired .(automatic process).
+but copy is used to handle file only.(some files)(manual process)
+format(creating file system)
+
+to utilize storage the hdd/sdd in proper way through the file system.
+
+ext - linux
+here ntfs not works bcz of comparitability.
+ext - linux(hierarchy structure)
+ntfs - windows(it wants utiilize the hdd in partitions)
+working state is diff for both.
+
+
+Windows : files and folders
+files in folder
+create file:
+in linux : vi is used to create a file.
+touch is ued to change the time spam .
+delete a file :
+
+data that refers to data is called meta data.
+
+
+encrption : to change the data type so others cannot read it. to change the security settings.
+compress : to reduce the size of the file.
+attributes / meta data :  it we create a file , file having 2 diff things one is data and another is meta data.
+to delete a file : if we del a file the file and meta data also delete.
+rename : the name if the file or directory it change.
+file meta data - type of file, location of file, hdd size , time .
+meta data is saved in hdd.
+hfdd needs some space system content saved is diff and user saved inforamtion is diff.
+ram we use fully but hdd cant happens.
+===============================================================================================
+internal fragmentation : 
+track sector ->block
+
+Contiguoes allocation : the data blocks or file is saved in continuoes manner.
+
+in continuoes the fie system seeking time is very fast .
+disadvantage is file cant grow.
+
+compaction :all the space holes comes to one place . but compaction ois difficult in mmeory management.
+De- fragmentation : Defragmentation is the process of locating the noncontiguous fragments 
+of data into which a computer file may be divided as it is stored on a hard disk,
+and rearranging the fragments and restoring them into fewer fragments or into the whole file. 
+Defragmentation reduces data access time and allows storage to be used more efficiently. 
+black n\boxes : sytem files. we cant move them.
+
+file system is software.
+zfs : to put info anf tos eek info from data base zfs is ued.
+in non-continuoes - there are 2 types : linked and indexed.
+
+
+
+
+10.2.6.30 ---> activity
+
+
+
+
+
+
+
+
